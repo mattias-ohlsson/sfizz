@@ -1,16 +1,13 @@
-%global commit b9c332777853cb35faeeda2ff4bf34ea7121ffb9
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-
 Name:           sfizz
 Version:        0.2.0
-Release:        1.git.%{shortcommit}%{?dist}
+Release:        1%{?dist}
 Summary:        SFZ library and LV2 plugin
 
 # https://github.com/sfztools/sfizz/blob/master/LICENSE.md: BSD
 # https://github.com/abseil/abseil-cpp/blob/master/LICENSE: ASL 2.0
 License:        BSD and ASL 2.0
 URL:            https://sfz.tools/sfizz
-Source0:        https://github.com/sfztools/%{name}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
+Source0:        https://github.com/sfztools/%{name}/archive/v%{version}.tar.gz
 Source1:        https://github.com/abseil/abseil-cpp/archive/20190808.tar.gz
 
 BuildRequires:  jack-audio-connection-kit-devel
@@ -42,8 +39,8 @@ Requires:       %{name} = %{version}-%{release}
 This package holds header files for building programs that link against Sfizz.
 
 %prep
-%autosetup -n %{name}-%{commit}
-%setup -D -T -a 1 -n %{name}-%{commit}
+%autosetup
+%setup -D -T -a 1
 cp -R abseil-cpp-*/. external/abseil-cpp/
 
 %build
