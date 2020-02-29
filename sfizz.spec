@@ -1,5 +1,5 @@
 Name:           sfizz
-Version:        0.2.0
+Version:        0.3.0
 Release:        1%{?dist}
 Summary:        SFZ library and LV2 plugin
 
@@ -7,7 +7,7 @@ Summary:        SFZ library and LV2 plugin
 # https://github.com/abseil/abseil-cpp/blob/master/LICENSE: ASL 2.0
 License:        BSD and ASL 2.0
 URL:            https://sfz.tools/sfizz
-Source0:        https://github.com/sfztools/%{name}/archive/v%{version}.tar.gz
+Source0:        https://github.com/sfztools/%{name}/archive/%{version}.tar.gz
 Source1:        https://github.com/abseil/abseil-cpp/archive/20190808.tar.gz
 
 BuildRequires:  jack-audio-connection-kit-devel
@@ -67,8 +67,12 @@ cd build
 %files devel
 %{_includedir}/%{name}.h
 %{_includedir}/%{name}.hpp
+%{_libdir}/lib%{name}.a
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sat Feb 29 2020 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.3.0-1
+- Update to 0.3.0
+
 * Fri Jan 24 2020 <mattias.ohlsson@inprose.com> - 0.2.0-1
 - Initial build
