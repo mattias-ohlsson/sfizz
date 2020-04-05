@@ -1,5 +1,5 @@
 Name:           sfizz
-Version:        0.3.1
+Version:        0.3.2
 Release:        1%{?dist}
 Summary:        SFZ library and LV2 plugin
 
@@ -71,6 +71,9 @@ cd build
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sun Apr 05 2020 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.3.2-1
+- Update to 0.3.2
+
 * Tue Mar 24 2020 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 0.3.1-1
 - Update to 0.3.1
 
